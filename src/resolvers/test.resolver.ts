@@ -1,8 +1,9 @@
 import { Mutation, Query, Resolver } from "type-graphql";
-import { inject } from "inversify";
+import {inject, injectable} from "inversify";
 import type { ITestService } from "@/services/test.svc";
 import { container } from "@/di";
 
+@injectable()
 @Resolver()
 export default class TestResolver {
   @inject("test.service")
